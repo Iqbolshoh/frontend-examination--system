@@ -2,20 +2,20 @@
     'use strict';
 
     // =============================================
-    //  MA'LUMOTLAR
+    //  DATA
     // =============================================
     const institutions = [
         {
             id: 1,
-            name: "1-sonli ixtisoslashtirilgan maktab",
+            name: "Specialized School No. 1",
             type: "school",
-            typeLabel: "Maktab",
+            typeLabel: "School",
             city: "tashkent",
-            cityLabel: "Toshkent",
+            cityLabel: "Tashkent",
             rating: 4.9,
             reviews: 234,
-            description: "Matematika va fizika yo'nalishidagi ixtisoslashtirilgan davlat maktabi. O'quvchilar ko'plab xalqaro olimpiadalarda qatnashadi.",
-            address: "Toshkent sh., Yunusobod tumani",
+            description: "Specialized state school focused on mathematics and physics. Students participate in international olympiads.",
+            address: "Tashkent, Yunusabad district",
             phone: "+998 71 123 45 67",
             website: "school1.uz",
             founded: 1985,
@@ -24,15 +24,15 @@
         },
         {
             id: 2,
-            name: "Prezident maktabi",
+            name: "Presidential School",
             type: "school",
-            typeLabel: "Maktab",
+            typeLabel: "School",
             city: "tashkent",
-            cityLabel: "Toshkent",
+            cityLabel: "Tashkent",
             rating: 4.8,
             reviews: 189,
-            description: "Prezident maktabi - iqtidorli o'quvchilar uchun xorijiy tillar va STEM yo'nalishidagi elita maktabi.",
-            address: "Toshkent sh., Yakkasaroy tumani",
+            description: "Elite school for gifted students with focus on foreign languages and STEM education.",
+            address: "Tashkent, Yakkasaray district",
             phone: "+998 71 234 56 78",
             website: "president.uz",
             founded: 2018,
@@ -41,15 +41,15 @@
         },
         {
             id: 3,
-            name: "Nodirabegim maktabi",
+            name: "Nodirabegim School",
             type: "school",
-            typeLabel: "Maktab",
+            typeLabel: "School",
             city: "samarqand",
-            cityLabel: "Samarqand",
+            cityLabel: "Samarkand",
             rating: 4.7,
             reviews: 156,
-            description: "Samarqanddagi eng qadimgi va nufuzli umumta'lim maktablaridan biri.",
-            address: "Samarqand sh., Registon ko'chasi",
+            description: "One of the oldest and most prestigious schools in Samarkand.",
+            address: "Samarkand, Registan street",
             phone: "+998 66 345 67 89",
             website: "nodira.uz",
             founded: 1965,
@@ -60,13 +60,13 @@
             id: 4,
             name: "IT STEP Academy",
             type: "center",
-            typeLabel: "O'quv markaz",
+            typeLabel: "Training Center",
             city: "tashkent",
-            cityLabel: "Toshkent",
+            cityLabel: "Tashkent",
             rating: 4.9,
             reviews: 312,
-            description: "Dasturlash, dizayn va IT sohasidagi eng yaxshi o'quv markaz. Xalqaro sertifikatlar.",
-            address: "Toshkent sh., Mustaqillik ko'chasi",
+            description: "Top training center for programming, design and IT with international certification.",
+            address: "Tashkent, Mustaqillik street",
             phone: "+998 71 456 78 90",
             website: "itstep.uz",
             founded: 2010,
@@ -77,13 +77,13 @@
             id: 5,
             name: "British Council",
             type: "center",
-            typeLabel: "O'quv markaz",
+            typeLabel: "Training Center",
             city: "tashkent",
-            cityLabel: "Toshkent",
+            cityLabel: "Tashkent",
             rating: 4.8,
             reviews: 278,
-            description: "Ingliz tili va IELTS tayyorlov markazi. Britaniya metodikasi asosida ta'lim beradi.",
-            address: "Toshkent sh., Pushkin ko'chasi",
+            description: "English language and IELTS preparation center using British teaching methodology.",
+            address: "Tashkent, Pushkin street",
             phone: "+998 71 567 89 01",
             website: "britishcouncil.uz",
             founded: 2005,
@@ -92,15 +92,15 @@
         },
         {
             id: 6,
-            name: "Abu Rayhon Beruniy markazi",
+            name: "Abu Rayhon Beruniy Center",
             type: "center",
-            typeLabel: "O'quv markaz",
+            typeLabel: "Training Center",
             city: "buxoro",
-            cityLabel: "Buxoro",
+            cityLabel: "Bukhara",
             rating: 4.6,
             reviews: 145,
-            description: "Matematika, fizika va kimyo fanlaridan ixtisoslashtirilgan o'quv markazi.",
-            address: "Buxoro sh., Alisher Navoiy ko'chasi",
+            description: "Specialized center for mathematics, physics and chemistry olympiad preparation.",
+            address: "Bukhara, Alisher Navoi street",
             phone: "+998 65 678 90 12",
             website: "beruniy.uz",
             founded: 2012,
@@ -109,15 +109,15 @@
         },
         {
             id: 7,
-            name: "Toshkent Davlat Texnika Universiteti",
+            name: "Tashkent State Technical University",
             type: "university",
-            typeLabel: "Universitet",
+            typeLabel: "University",
             city: "tashkent",
-            cityLabel: "Toshkent",
+            cityLabel: "Tashkent",
             rating: 4.7,
             reviews: 456,
-            description: "O'zbekistonning eng yirik texnik universiteti. Muhandislik, IT va texnologiya yo'nalishlari.",
-            address: "Toshkent sh., Universitet ko'chasi",
+            description: "Uzbekistan's largest technical university offering engineering, IT and technology programs.",
+            address: "Tashkent, University street",
             phone: "+998 71 789 01 23",
             website: "tdtu.uz",
             founded: 1918,
@@ -126,15 +126,15 @@
         },
         {
             id: 8,
-            name: "Toshkent Davlat Iqtisodiyot Universiteti",
+            name: "Tashkent State University of Economics",
             type: "university",
-            typeLabel: "Universitet",
+            typeLabel: "University",
             city: "tashkent",
-            cityLabel: "Toshkent",
+            cityLabel: "Tashkent",
             rating: 4.6,
             reviews: 389,
-            description: "Iqtisodiyot, menejment va moliya sohasidagi eng nufuzli universitet.",
-            address: "Toshkent sh., A.Temur ko'chasi",
+            description: "Leading university for economics, management and finance education.",
+            address: "Tashkent, A.Temur street",
             phone: "+998 71 890 12 34",
             website: "tsue.uz",
             founded: 1931,
@@ -143,15 +143,15 @@
         },
         {
             id: 9,
-            name: "Samarqand Davlat Universiteti",
+            name: "Samarkand State University",
             type: "university",
-            typeLabel: "Universitet",
+            typeLabel: "University",
             city: "samarqand",
-            cityLabel: "Samarqand",
+            cityLabel: "Samarkand",
             rating: 4.5,
             reviews: 321,
-            description: "O'zbekistonning eng qadimgi universitetlaridan biri. Gumanitar va tabiiy fanlar.",
-            address: "Samarqand sh., Universitet xiyoboni",
+            description: "One of Uzbekistan's oldest universities offering humanities and natural sciences.",
+            address: "Samarkand, University boulevard",
             phone: "+998 66 901 23 45",
             website: "samdu.uz",
             founded: 1927,
@@ -162,13 +162,13 @@
             id: 10,
             name: "Inha University in Tashkent",
             type: "university",
-            typeLabel: "Universitet",
+            typeLabel: "University",
             city: "tashkent",
-            cityLabel: "Toshkent",
+            cityLabel: "Tashkent",
             rating: 4.8,
             reviews: 234,
-            description: "Koreya metodikasi asosidagi zamonaviy universitet. AI va telekommunikatsiya.",
-            address: "Toshkent sh., Yunusobod tumani",
+            description: "Modern university based on Korean methodology with focus on AI and telecommunications.",
+            address: "Tashkent, Yunusabad district",
             phone: "+998 71 012 34 56",
             website: "inha.uz",
             founded: 2014,
@@ -177,15 +177,15 @@
         },
         {
             id: 11,
-            name: "Qarshi Davlat Universiteti",
+            name: "Karshi State University",
             type: "university",
-            typeLabel: "Universitet",
+            typeLabel: "University",
             city: "qarshi",
-            cityLabel: "Qarshi",
+            cityLabel: "Karshi",
             rating: 4.4,
             reviews: 178,
-            description: "Pedagogika va ta'lim sohasidagi yetakchi universitet.",
-            address: "Qarshi sh., Navoiy ko'chasi",
+            description: "Leading university for pedagogy and teacher training.",
+            address: "Karshi, Navoi street",
             phone: "+998 75 123 45 67",
             website: "qdu.uz",
             founded: 1945,
@@ -196,13 +196,13 @@
             id: 12,
             name: "Westminster International University",
             type: "university",
-            typeLabel: "Universitet",
+            typeLabel: "University",
             city: "tashkent",
-            cityLabel: "Toshkent",
+            cityLabel: "Tashkent",
             rating: 4.9,
             reviews: 412,
-            description: "Xalqaro universitet. Biznes, iqtisodiyot va IT bo'yicha ingliz tilida ta'lim.",
-            address: "Toshkent sh., I.Karimov ko'chasi",
+            description: "International university offering business, economics and IT programs in English.",
+            address: "Tashkent, I.Karimov street",
             phone: "+998 71 234 56 78",
             website: "wiut.uz",
             founded: 2002,
@@ -214,28 +214,28 @@
     const testimonials = [
         {
             name: "Dilnoza",
-            role: "Maktab o'quvchisi",
-            text: "Ta'lim Maskani orqali eng yaxshi maktabni topdim. Hozir matematika olimpiadalarida qatnashyapman!"
+            role: "School Student",
+            text: "EduGuide helped me find the best school. Now I'm participating in math olympiads!"
         },
         {
             name: "Jasur",
-            role: "Universitet talabasi",
-            text: "Universitet tanlashda juda ko'p yordam berdi. Barcha ma'lumotlar va reytinglar aniq va ishonchli."
+            role: "University Student",
+            text: "So helpful in choosing a university. All information and ratings are accurate and reliable."
         },
         {
             name: "Madina",
-            role: "O'quv markaz o'quvchisi",
-            text: "IT kurslarini topishda ajoyib platforma. Ingliz tilini ham shu yerdan topib oldim."
+            role: "Training Center Student",
+            text: "Great platform for finding IT courses. Also found my English courses here."
         },
         {
             name: "Sardor",
-            role: "Bitiruvchi",
-            text: "Westminster universitetini Ta'lim Maskani orqali tanladim. Hozir muvaffaqiyatli ishlab yapman."
+            role: "Graduate",
+            text: "I chose Westminster University through EduGuide. Now I'm successfully working."
         }
     ];
 
     // =============================================
-    //  DOM ELEMENTLAR
+    //  DOM ELEMENTS
     // =============================================
     const grid = document.getElementById('institutionsGrid');
     const searchInput = document.getElementById('searchInput');
@@ -271,7 +271,7 @@
     themeToggle.addEventListener('click', toggleTheme);
 
     // =============================================
-    //  SVG IKONKALAR
+    //  SVG ICONS
     // =============================================
     const icons = {
         school: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
@@ -302,8 +302,8 @@
                         <circle cx="11" cy="11" r="8"/>
                         <path d="M21 21L16.65 16.65"/>
                     </svg>
-                    <h3>Hech narsa topilmadi</h3>
-                    <p>Qidiruv shartlarini o'zgartirib ko'ring</p>
+                    <h3>Nothing found</h3>
+                    <p>Try changing your search criteria</p>
                 </div>
             `;
             return;
@@ -407,17 +407,17 @@
                 <span style="background:var(--primary-bg);color:var(--primary);padding:4px 16px;border-radius:60px;font-size:13px;font-weight:600;">${item.typeLabel}</span>
                 <span style="background:var(--bg-input);color:var(--text-secondary);padding:4px 16px;border-radius:60px;font-size:13px;">${item.cityLabel}</span>
                 <span style="background:#FDCB6E20;color:#FDCB6E;padding:4px 16px;border-radius:60px;font-size:13px;font-weight:600;">
-                    ★ ${item.rating} (${item.reviews} sharh)
+                    ★ ${item.rating} (${item.reviews} reviews)
                 </span>
             </div>
             <p style="font-size:16px;line-height:1.8;margin-bottom:20px;color:var(--text-secondary);">${item.description}</p>
             <div style="background:var(--bg-input);border-radius:var(--radius);padding:16px 20px;">
-                <div class="detail-row"><span class="label">📍 Manzil</span><span class="value">${item.address}</span></div>
-                <div class="detail-row"><span class="label">📞 Telefon</span><span class="value">${item.phone}</span></div>
-                <div class="detail-row"><span class="label">🌐 Veb-sayt</span><span class="value"><a href="#" style="color:var(--primary);text-decoration:none;">${item.website}</a></span></div>
-                <div class="detail-row"><span class="label">📅 Tashkil etilgan</span><span class="value">${item.founded}</span></div>
-                <div class="detail-row"><span class="label">👨‍🎓 O'quvchilar</span><span class="value">${item.students}+</span></div>
-                <div class="detail-row"><span class="label">🎓 Bitiruv statistikasi</span><span class="value">${item.graduates}%</span></div>
+                <div class="detail-row"><span class="label">📍 Address</span><span class="value">${item.address}</span></div>
+                <div class="detail-row"><span class="label">📞 Phone</span><span class="value">${item.phone}</span></div>
+                <div class="detail-row"><span class="label">🌐 Website</span><span class="value"><a href="#" style="color:var(--primary);text-decoration:none;">${item.website}</a></span></div>
+                <div class="detail-row"><span class="label">📅 Established</span><span class="value">${item.founded}</span></div>
+                <div class="detail-row"><span class="label">👨‍🎓 Students</span><span class="value">${item.students}+</span></div>
+                <div class="detail-row"><span class="label">🎓 Graduation Rate</span><span class="value">${item.graduates}%</span></div>
             </div>
         `;
         modal.classList.add('active');
@@ -452,7 +452,7 @@
     }
 
     // =============================================
-    //  ANIMATSION NUMBERS
+    //  ANIMATED NUMBERS
     // =============================================
     function animateNumbers() {
         document.querySelectorAll('.stat-number').forEach(el => {
@@ -497,7 +497,7 @@
     });
 
     // =============================================
-    //  EVENT LISTENERLAR
+    //  EVENT LISTENERS
     // =============================================
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('open');
