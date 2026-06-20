@@ -3,72 +3,219 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Examination System</title>
+    <title>Maktab Test Tizimi</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!-- CSS faylni ulash -->
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- CSS fayl -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="exam-container" id="examApp">
-        <!-- Sarlavha -->
-        <div class="exam-header">
-            <h1><i class="fas fa-graduation-cap"></i> Online Exam</h1>
-            <div class="exam-timer">
-                <i class="fas fa-hourglass-half"></i>
-                <span id="timerDisplay">15:00</span>
+    <div class="app-wrapper">
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span>Maktab Test</span>
             </div>
-        </div>
-
-        <!-- Progress va meta -->
-        <div class="exam-meta">
-            <span class="question-counter">
-                <i class="fas fa-question-circle"></i>
-                <span id="currentQNum">1</span>/<span id="totalQNum">5</span>
-            </span>
-            <div class="progress-track">
-                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-link active" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Bosh sahifa</span>
+                </a>
+                <a href="#" class="nav-link" data-page="subjects">
+                    <i class="fas fa-book"></i>
+                    <span>Fanlar</span>
+                </a>
+                <a href="#" class="nav-link" data-page="history">
+                    <i class="fas fa-history"></i>
+                    <span>Natijalar</span>
+                </a>
+                <a href="#" class="nav-link" data-page="profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profil</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div>
+                        <div class="user-name">O'quvchi</div>
+                        <div class="user-role">7-sinf</div>
+                    </div>
+                </div>
             </div>
-            <span class="score-badge">
-                <i class="fas fa-star"></i> <span id="scoreDisplay">0</span>
-            </span>
-        </div>
+        </aside>
 
-        <!-- Savol kartasi -->
-        <div class="question-card" id="questionCard">
-            <div class="question-text" id="questionText">Savol yuklanmoqda...</div>
-            <div class="options-list" id="optionsContainer"></div>
-        </div>
-
-        <!-- Navigatsiya -->
-        <div class="nav-controls">
-            <div class="btn-group">
-                <button class="btn btn-outline" id="prevBtn">
-                    <i class="fas fa-chevron-left"></i> Oldingi
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+            <!-- ===== HEADER ===== -->
+            <header class="main-header">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
                 </button>
-                <button class="btn btn-outline" id="nextBtn">
-                    Keyingi <i class="fas fa-chevron-right"></i>
+                <h1 id="pageTitle">Bosh sahifa</h1>
+                <div class="header-actions">
+                    <button class="icon-btn" title="Bildirishnomalar">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="icon-btn" title="Yordam">
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- ===== PAGES ===== -->
+            <div class="pages-container">
+                <!-- HOME PAGE -->
+                <div class="page active" id="page-home">
+                    <!-- Welcome -->
+                    <div class="welcome-card">
+                        <div class="welcome-text">
+                            <h2>Assalomu alaykum, O'quvchi! 👋</h2>
+                            <p>Bugun o'z bilimingizni sinab ko'ring. 5 ta fandan test topshiring!</p>
+                        </div>
+                        <div class="welcome-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" id="totalTests">0</span>
+                                <span class="stat-label">Topshirilgan testlar</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" id="avgScore">0%</span>
+                                <span class="stat-label">O'rtacha ball</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subjects Grid -->
+                    <div class="subjects-grid" id="subjectsGrid">
+                        <!-- Subjects will be rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- SUBJECTS PAGE -->
+                <div class="page" id="page-subjects">
+                    <div class="page-header">
+                        <h2><i class="fas fa-book"></i> Barcha fanlar</h2>
+                        <p>O'zingiz tanlagan fan bo'yicha test topshiring</p>
+                    </div>
+                    <div class="subjects-grid" id="allSubjectsGrid">
+                        <!-- All subjects rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- HISTORY PAGE -->
+                <div class="page" id="page-history">
+                    <div class="page-header">
+                        <h2><i class="fas fa-history"></i> Mening natijalarim</h2>
+                        <p>Siz topshirgan testlar tarixi</p>
+                    </div>
+                    <div class="history-list" id="historyList">
+                        <!-- History rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- PROFILE PAGE -->
+                <div class="page" id="page-profile">
+                    <div class="page-header">
+                        <h2><i class="fas fa-user"></i> Mening profilim</h2>
+                        <p>Shaxsiy ma'lumotlar va statistika</p>
+                    </div>
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3>O'quvchi</h3>
+                            <p>7-sinf o'quvchisi</p>
+                            <div class="profile-stats">
+                                <div class="profile-stat">
+                                    <span class="stat-value" id="profileTests">0</span>
+                                    <span class="stat-label">Testlar</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <span class="stat-value" id="profileAvg">0%</span>
+                                    <span class="stat-label">O'rtacha</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <span class="stat-value" id="profileBest">0%</span>
+                                    <span class="stat-label">Eng yaxshi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== TEST MODAL ===== -->
+    <div class="modal" id="testModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Test</h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div>
-                <button class="btn btn-success" id="submitBtn">
-                    <i class="fas fa-check-circle"></i> Imtihonni topshirish
+            <div class="modal-body">
+                <div class="test-info">
+                    <div class="test-meta">
+                        <span><i class="fas fa-list"></i> <span id="testTotal">0</span> savol</span>
+                        <span><i class="fas fa-clock"></i> <span id="testTime">10:00</span></span>
+                    </div>
+                    <div class="test-progress">
+                        <div class="test-progress-bar" id="testProgressBar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="test-question" id="testQuestion">
+                    <div class="question-number" id="testQNum">Savol 1</div>
+                    <div class="question-text" id="testQText">Savol yuklanmoqda...</div>
+                    <div class="test-options" id="testOptions"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="testPrevBtn">
+                    <i class="fas fa-arrow-left"></i> Oldingi
+                </button>
+                <button class="btn btn-outline" id="testNextBtn">
+                    Keyingi <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn btn-success" id="testSubmitBtn">
+                    <i class="fas fa-check"></i> Topshirish
                 </button>
             </div>
         </div>
+    </div>
 
-        <!-- Natija paneli -->
-        <div class="result-panel" id="resultPanel">
-            <h2><i class="fas fa-flag-checked"></i> Imtihon tugadi</h2>
-            <div class="final-score" id="finalScore">0</div>
-            <div class="result-message" id="resultMessage">Ajoyib!</div>
-            <button class="btn btn-primary" id="restartBtn">
-                <i class="fas fa-sync-alt"></i> Qayta boshlash
+    <!-- ===== RESULT MODAL ===== -->
+    <div class="modal" id="resultModal">
+        <div class="modal-content result-modal">
+            <div class="result-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h2>Test yakunlandi!</h2>
+            <div class="result-score" id="resultScore">0%</div>
+            <div class="result-details">
+                <p><span id="resultCorrect">0</span> ta to'g'ri javob</p>
+                <p><span id="resultWrong">0</span> ta noto'g'ri javob</p>
+            </div>
+            <p class="result-message" id="resultMsg">Ajoyib!</p>
+            <button class="btn btn-primary" id="resultCloseBtn">
+                <i class="fas fa-check"></i> Yopish
             </button>
         </div>
     </div>
 
-    <!-- JS faylni ulash -->
-    <script src="./assets/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
