@@ -4,529 +4,555 @@
     // =============================================
     //  MA'LUMOTLAR
     // =============================================
-    const subjects = [
-        { id: 'math', name: 'Matematika', icon: 'fa-calculator', class: 'math', questions: 10 },
-        { id: 'science', name: 'Tabiiy fanlar', icon: 'fa-flask', class: 'science', questions: 8 },
-        { id: 'history', name: 'Tarix', icon: 'fa-landmark', class: 'history', questions: 8 },
-        { id: 'english', name: 'Ingliz tili', icon: 'fa-language', class: 'english', questions: 10 },
-        { id: 'geography', name: 'Geografiya', icon: 'fa-globe', class: 'geography', questions: 8 },
-        { id: 'physics', name: 'Fizika', icon: 'fa-atom', class: 'physics', questions: 8 },
-        { id: 'chemistry', name: 'Kimyo', icon: 'fa-vial', class: 'chemistry', questions: 8 },
-        { id: 'biology', name: 'Biologiya', icon: 'fa-dna', class: 'biology', questions: 8 }
+    const institutions = [
+        {
+            id: 1,
+            name: "1-sonli ixtisoslashtirilgan maktab",
+            type: "school",
+            typeLabel: "Maktab",
+            city: "tashkent",
+            cityLabel: "Toshkent",
+            rating: 4.9,
+            reviews: 234,
+            description: "Matematika va fizika yo'nalishidagi ixtisoslashtirilgan davlat maktabi. O'quvchilar ko'plab xalqaro olimpiadalarda qatnashadi.",
+            address: "Toshkent sh., Yunusobod tumani",
+            phone: "+998 71 123 45 67",
+            website: "school1.uz",
+            founded: 1985,
+            students: 1200,
+            graduates: 95
+        },
+        {
+            id: 2,
+            name: "Prezident maktabi",
+            type: "school",
+            typeLabel: "Maktab",
+            city: "tashkent",
+            cityLabel: "Toshkent",
+            rating: 4.8,
+            reviews: 189,
+            description: "Prezident maktabi - iqtidorli o'quvchilar uchun xorijiy tillar va STEM yo'nalishidagi elita maktabi.",
+            address: "Toshkent sh., Yakkasaroy tumani",
+            phone: "+998 71 234 56 78",
+            website: "president.uz",
+            founded: 2018,
+            students: 800,
+            graduates: 98
+        },
+        {
+            id: 3,
+            name: "Nodirabegim maktabi",
+            type: "school",
+            typeLabel: "Maktab",
+            city: "samarqand",
+            cityLabel: "Samarqand",
+            rating: 4.7,
+            reviews: 156,
+            description: "Samarqanddagi eng qadimgi va nufuzli umumta'lim maktablaridan biri.",
+            address: "Samarqand sh., Registon ko'chasi",
+            phone: "+998 66 345 67 89",
+            website: "nodira.uz",
+            founded: 1965,
+            students: 1500,
+            graduates: 92
+        },
+        {
+            id: 4,
+            name: "IT STEP Academy",
+            type: "center",
+            typeLabel: "O'quv markaz",
+            city: "tashkent",
+            cityLabel: "Toshkent",
+            rating: 4.9,
+            reviews: 312,
+            description: "Dasturlash, dizayn va IT sohasidagi eng yaxshi o'quv markaz. Xalqaro sertifikatlar.",
+            address: "Toshkent sh., Mustaqillik ko'chasi",
+            phone: "+998 71 456 78 90",
+            website: "itstep.uz",
+            founded: 2010,
+            students: 2500,
+            graduates: 93
+        },
+        {
+            id: 5,
+            name: "British Council",
+            type: "center",
+            typeLabel: "O'quv markaz",
+            city: "tashkent",
+            cityLabel: "Toshkent",
+            rating: 4.8,
+            reviews: 278,
+            description: "Ingliz tili va IELTS tayyorlov markazi. Britaniya metodikasi asosida ta'lim beradi.",
+            address: "Toshkent sh., Pushkin ko'chasi",
+            phone: "+998 71 567 89 01",
+            website: "britishcouncil.uz",
+            founded: 2005,
+            students: 1800,
+            graduates: 96
+        },
+        {
+            id: 6,
+            name: "Abu Rayhon Beruniy markazi",
+            type: "center",
+            typeLabel: "O'quv markaz",
+            city: "buxoro",
+            cityLabel: "Buxoro",
+            rating: 4.6,
+            reviews: 145,
+            description: "Matematika, fizika va kimyo fanlaridan ixtisoslashtirilgan o'quv markazi.",
+            address: "Buxoro sh., Alisher Navoiy ko'chasi",
+            phone: "+998 65 678 90 12",
+            website: "beruniy.uz",
+            founded: 2012,
+            students: 600,
+            graduates: 90
+        },
+        {
+            id: 7,
+            name: "Toshkent Davlat Texnika Universiteti",
+            type: "university",
+            typeLabel: "Universitet",
+            city: "tashkent",
+            cityLabel: "Toshkent",
+            rating: 4.7,
+            reviews: 456,
+            description: "O'zbekistonning eng yirik texnik universiteti. Muhandislik, IT va texnologiya yo'nalishlari.",
+            address: "Toshkent sh., Universitet ko'chasi",
+            phone: "+998 71 789 01 23",
+            website: "tdtu.uz",
+            founded: 1918,
+            students: 12000,
+            graduates: 94
+        },
+        {
+            id: 8,
+            name: "Toshkent Davlat Iqtisodiyot Universiteti",
+            type: "university",
+            typeLabel: "Universitet",
+            city: "tashkent",
+            cityLabel: "Toshkent",
+            rating: 4.6,
+            reviews: 389,
+            description: "Iqtisodiyot, menejment va moliya sohasidagi eng nufuzli universitet.",
+            address: "Toshkent sh., A.Temur ko'chasi",
+            phone: "+998 71 890 12 34",
+            website: "tsue.uz",
+            founded: 1931,
+            students: 10000,
+            graduates: 91
+        },
+        {
+            id: 9,
+            name: "Samarqand Davlat Universiteti",
+            type: "university",
+            typeLabel: "Universitet",
+            city: "samarqand",
+            cityLabel: "Samarqand",
+            rating: 4.5,
+            reviews: 321,
+            description: "O'zbekistonning eng qadimgi universitetlaridan biri. Gumanitar va tabiiy fanlar.",
+            address: "Samarqand sh., Universitet xiyoboni",
+            phone: "+998 66 901 23 45",
+            website: "samdu.uz",
+            founded: 1927,
+            students: 8500,
+            graduates: 89
+        },
+        {
+            id: 10,
+            name: "Inha University in Tashkent",
+            type: "university",
+            typeLabel: "Universitet",
+            city: "tashkent",
+            cityLabel: "Toshkent",
+            rating: 4.8,
+            reviews: 234,
+            description: "Koreya metodikasi asosidagi zamonaviy universitet. AI va telekommunikatsiya.",
+            address: "Toshkent sh., Yunusobod tumani",
+            phone: "+998 71 012 34 56",
+            website: "inha.uz",
+            founded: 2014,
+            students: 1500,
+            graduates: 97
+        },
+        {
+            id: 11,
+            name: "Qarshi Davlat Universiteti",
+            type: "university",
+            typeLabel: "Universitet",
+            city: "qarshi",
+            cityLabel: "Qarshi",
+            rating: 4.4,
+            reviews: 178,
+            description: "Pedagogika va ta'lim sohasidagi yetakchi universitet.",
+            address: "Qarshi sh., Navoiy ko'chasi",
+            phone: "+998 75 123 45 67",
+            website: "qdu.uz",
+            founded: 1945,
+            students: 4000,
+            graduates: 85
+        },
+        {
+            id: 12,
+            name: "Westminster International University",
+            type: "university",
+            typeLabel: "Universitet",
+            city: "tashkent",
+            cityLabel: "Toshkent",
+            rating: 4.9,
+            reviews: 412,
+            description: "Xalqaro universitet. Biznes, iqtisodiyot va IT bo'yicha ingliz tilida ta'lim.",
+            address: "Toshkent sh., I.Karimov ko'chasi",
+            phone: "+998 71 234 56 78",
+            website: "wiut.uz",
+            founded: 2002,
+            students: 3000,
+            graduates: 98
+        }
     ];
 
-    // Har bir fan uchun test savollari
-    const questionBank = {
-        math: [
-            { text: "7 × 8 = ?", options: ["48", "56", "64", "72"], correct: 1 },
-            { text: "144 ni 12 ga bo'lganda necha chiqadi?", options: ["10", "11", "12", "13"], correct: 2 },
-            { text: "5² + 3² = ?", options: ["25", "34", "16", "28"], correct: 1 },
-            { text: "Kvadratning tomoni 6 sm bo'lsa, uning perimetri necha sm?", options: ["24", "36", "12", "18"], correct: 0 },
-            { text: "0,5 + 0,25 = ?", options: ["0,75", "0,70", "0,80", "0,65"], correct: 0 },
-            { text: "12 × 15 = ?", options: ["150", "160", "170", "180"], correct: 3 },
-            { text: "Tenglamani yeching: 2x + 5 = 15", options: ["5", "7", "10", "3"], correct: 0 },
-            { text: "Yuzi 81 sm² bo'lgan kvadratning tomoni necha sm?", options: ["8", "9", "10", "7"], correct: 1 },
-            { text: "15 - 7 + 3 = ?", options: ["5", "11", "9", "7"], correct: 1 },
-            { text: "1 km necha metr?", options: ["100", "1000", "10000", "10"], correct: 1 }
-        ],
-        science: [
-            { text: "Suvning kimyoviy formulasi?", options: ["H₂O", "CO₂", "NaCl", "H₂SO₄"], correct: 0 },
-            { text: "Qaysi sayyora Quyoshga eng yaqin?", options: ["Venera", "Merkuriy", "Yer", "Mars"], correct: 1 },
-            { text: "Yorug'lik tezligi taxminan necha km/s?", options: ["300 000", "150 000", "500 000", "100 000"], correct: 0 },
-            { text: "Organizmning eng kichik tuzilish birligi?", options: ["Hujayra", "To'qima", "Organ", "Sistem"], correct: 0 },
-            { text: "Qaysi gaz eng ko'p hajmni egallaydi?", options: ["Kislorod", "Vodorod", "Azot", "Karbonat angidrid"], correct: 0 },
-            { text: "Suyuqlikning qaynash harorati necha °C?", options: ["0", "50", "100", "200"], correct: 2 },
-            { text: "Yerning sun'iy yo'ldoshi?", options: ["Quyosh", "Oy", "Venera", "Mars"], correct: 1 },
-            { text: "Qaysi organ qonni tozalaydi?", options: ["Yurak", "O'pka", "Buyrak", "Jigar"], correct: 2 }
-        ],
-        history: [
-            { text: "O'zbekiston mustaqillikka qaysi yili erishdi?", options: ["1990", "1991", "1992", "1989"], correct: 1 },
-            { text: "Amir Temur qaysi asrda yashagan?", options: ["XIV", "XV", "XIII", "XVI"], correct: 0 },
-            { text: "Birinchi jahon urushi qaysi yillarda bo'lib o'tgan?", options: ["1912-1916", "1914-1918", "1915-1919", "1913-1917"], correct: 1 },
-            { text: "Qadimgi Misrning eng mashhur fir'avni?", options: ["Ramses", "Tutankhamon", "Xeops", "Ehnaton"], correct: 1 },
-            { text: "Sovet Ittifoqi qaysi yili parchalandi?", options: ["1989", "1990", "1991", "1992"], correct: 2 },
-            { text: "Ilk yozuv qaysi tsivilizatsiyada paydo bo'lgan?", options: ["Misr", "Sumer", "Hind", "Xitoy"], correct: 1 },
-            { text: "Buyuk Ipak yo'li qaysi davlatlarni bog'lagan?", options: ["Xitoy-Yevropa", "Hind-Yevropa", "Arab-Yevropa", "Monqol-Yevropa"], correct: 0 },
-            { text: "Qaysi shahar O'zbekistonning poytaxti?", options: ["Samarqand", "Buxoro", "Toshkent", "Farg'ona"], correct: 2 }
-        ],
-        english: [
-            { text: "What is the plural of 'child'?", options: ["Childs", "Children", "Childrens", "Childes"], correct: 1 },
-            { text: "She ___ to school every day.", options: ["go", "goes", "going", "gone"], correct: 1 },
-            { text: "What is the opposite of 'hot'?", options: ["Warm", "Cold", "Cool", "Chilly"], correct: 1 },
-            { text: "I have ___ apple.", options: ["a", "an", "the", "no"], correct: 1 },
-            { text: "They ___ playing football now.", options: ["is", "am", "are", "be"], correct: 2 },
-            { text: "What is the past tense of 'eat'?", options: ["eated", "ate", "eaten", "eating"], correct: 1 },
-            { text: "Which word is a noun?", options: ["Run", "Beautiful", "Happiness", "Quickly"], correct: 2 },
-            { text: "I am ___ student.", options: ["a", "an", "the", "no"], correct: 0 },
-            { text: "She can ___ French.", options: ["speaks", "speaking", "speak", "spoken"], correct: 2 },
-            { text: "What is the correct spelling?", options: ["Recieve", "Receive", "Receve", "Reecive"], correct: 1 }
-        ],
-        geography: [
-            { text: "O'zbekiston qaysi qit'ada joylashgan?", options: ["Yevropa", "Osiyo", "Afrika", "Avstraliya"], correct: 1 },
-            { text: "Dunyodagi eng katta okean?", options: ["Atlantika", "Tinch", "Hind", "Shimoliy Muz"], correct: 1 },
-            { text: "Amazon daryosi qaysi mamlakatda?", options: ["Braziliya", "Peru", "Kolumbiya", "Venesuela"], correct: 0 },
-            { text: "Eng baland tog' qaysi?", options: ["Everest", "Kilimanjaro", "Elbrus", "Denali"], correct: 0 },
-            { text: "O'zbekistonning eng katta shahri?", options: ["Samarqand", "Toshkent", "Buxoro", "Namangan"], correct: 1 },
-            { text: "Sahara cho'li qaysi qit'ada?", options: ["Osiyo", "Afrika", "Avstraliya", "Janubiy Amerika"], correct: 1 },
-            { text: "Qaysi davlat ikki qit'ada joylashgan?", options: ["Hindiston", "Rossiya", "Misr", "Turkiya"], correct: 3 },
-            { text: "Eng katta materik qaysi?", options: ["Afrika", "Osiyo", "Shimoliy Amerika", "Avstraliya"], correct: 1 }
-        ],
-        physics: [
-            { text: "Energiya o'lchov birligi?", options: ["Vatt", "Joul", "Nyuton", "Paskal"], correct: 1 },
-            { text: "Kuch o'lchov birligi?", options: ["Joul", "Vatt", "Nyuton", "Paskal"], correct: 2 },
-            { text: "Yorug'lik tezligi vakuumda necha m/s?", options: ["3×10⁸", "3×10⁷", "3×10⁹", "3×10⁶"], correct: 0 },
-            { text: "Tovush qaysi muhitda eng tez tarqaladi?", options: ["Havo", "Suv", "Metall", "Vakuum"], correct: 2 },
-            { text: "Atom yadrosi qanday zarralardan tashkil topgan?", options: ["Proton, neytron", "Proton, elektron", "Neytron, elektron", "Proton, foton"], correct: 0 },
-            { text: "Bosim o'lchov birligi?", options: ["Nyuton", "Paskal", "Joul", "Vatt"], correct: 1 },
-            { text: "Qaysi narsa o'tkazgich?", options: ["Rezina", "Mis", "Plastmass", "Shisha"], correct: 1 },
-            { text: "Yer sirtida og'irlik kuchi taxminan necha m/s²?", options: ["8", "9,8", "10,8", "11,8"], correct: 1 }
-        ],
-        chemistry: [
-            { text: "Suvning kimyoviy formulasi?", options: ["H₂O", "CO₂", "NaCl", "H₂SO₄"], correct: 0 },
-            { text: "Kislorodning kimyoviy belgisi?", options: ["O", "O₂", "K", "KO"], correct: 0 },
-            { text: "Qaysi modda kislotadir?", options: ["NaOH", "HCl", "NaCl", "H₂O"], correct: 1 },
-            { text: "Tuzning kimyoviy formulasi?", options: ["NaCl", "NaOH", "HCl", "H₂O"], correct: 0 },
-            { text: "Vodorodning atom massasi?", options: ["1", "2", "16", "12"], correct: 0 },
-            { text: "Qaysi gaz olovni o'chiradi?", options: ["Kislorod", "Vodorod", "Karbonat angidrid", "Azot"], correct: 2 },
-            { text: "Metall va nometall qanday bog'lanadi?", options: ["Kovalent", "Ion", "Metall", "Vodorod"], correct: 1 },
-            { text: "D.I. Mendeleyev qaysi sohada mashhur?", options: ["Fizika", "Kimyo", "Biologiya", "Astronomiya"], correct: 1 }
-        ],
-        biology: [
-            { text: "Organizmning eng kichik tuzilish birligi?", options: ["Hujayra", "To'qima", "Organ", "Sistem"], correct: 0 },
-            { text: "O'simliklarning oziqlanish usuli?", options: ["Fotosintez", "Xemosintez", "Geterotrof", "Saprotrof"], correct: 0 },
-            { text: "Qon qaysi organ tomonidan tozalanadi?", options: ["Yurak", "O'pka", "Buyrak", "Jigar"], correct: 2 },
-            { text: "Nafas olish jarayonida qaysi gaz chiqariladi?", options: ["Kislorod", "Karbonat angidrid", "Azot", "Vodorod"], correct: 1 },
-            { text: "Genetika qaysi olim tomonidan asos solingan?", options: ["Darvin", "Mendel", "Lamarck", "Pavlov"], correct: 1 },
-            { text: "Mushaklar qanday to'qimadan tashkil topgan?", options: ["Epitelial", "Bog'lovchi", "Muskul", "Nerv"], correct: 2 },
-            { text: "Qaysi vitamin A deb ataladi?", options: ["Retinol", "Tiamin", "Askorbin", "Kalsiferol"], correct: 0 },
-            { text: "Inson necha juft xromosomaga ega?", options: ["22", "23", "24", "46"], correct: 1 }
-        ]
-    };
-
-    // Test natijalari tarixi
-    let history = JSON.parse(localStorage.getItem('testHistory')) || [];
-    let totalTests = history.length;
+    const testimonials = [
+        {
+            name: "Dilnoza",
+            role: "Maktab o'quvchisi",
+            text: "Ta'lim Maskani orqali eng yaxshi maktabni topdim. Hozir matematika olimpiadalarida qatnashyapman!"
+        },
+        {
+            name: "Jasur",
+            role: "Universitet talabasi",
+            text: "Universitet tanlashda juda ko'p yordam berdi. Barcha ma'lumotlar va reytinglar aniq va ishonchli."
+        },
+        {
+            name: "Madina",
+            role: "O'quv markaz o'quvchisi",
+            text: "IT kurslarini topishda ajoyib platforma. Ingliz tilini ham shu yerdan topib oldim."
+        },
+        {
+            name: "Sardor",
+            role: "Bitiruvchi",
+            text: "Westminster universitetini Ta'lim Maskani orqali tanladim. Hozir muvaffaqiyatli ishlab yapman."
+        }
+    ];
 
     // =============================================
-    //  DOM ELEMENTLARI
+    //  DOM ELEMENTLAR
     // =============================================
-    const sidebar = document.getElementById('sidebar');
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const pages = document.querySelectorAll('.page');
-    const pageTitle = document.getElementById('pageTitle');
-    const subjectsGrid = document.getElementById('subjectsGrid');
-    const allSubjectsGrid = document.getElementById('allSubjectsGrid');
-    const historyList = document.getElementById('historyList');
-    const totalTestsEl = document.getElementById('totalTests');
-    const avgScoreEl = document.getElementById('avgScore');
-    const profileTests = document.getElementById('profileTests');
-    const profileAvg = document.getElementById('profileAvg');
-    const profileBest = document.getElementById('profileBest');
-
-    // Test modal
-    const testModal = document.getElementById('testModal');
+    const grid = document.getElementById('institutionsGrid');
+    const searchInput = document.getElementById('searchInput');
+    const typeFilter = document.getElementById('typeFilter');
+    const cityFilter = document.getElementById('cityFilter');
+    const searchForm = document.getElementById('searchForm');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const modal = document.getElementById('institutionModal');
     const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
     const modalClose = document.getElementById('modalClose');
-    const testTotal = document.getElementById('testTotal');
-    const testTime = document.getElementById('testTime');
-    const testProgressBar = document.getElementById('testProgressBar');
-    const testQNum = document.getElementById('testQNum');
-    const testQText = document.getElementById('testQText');
-    const testOptions = document.getElementById('testOptions');
-    const testPrevBtn = document.getElementById('testPrevBtn');
-    const testNextBtn = document.getElementById('testNextBtn');
-    const testSubmitBtn = document.getElementById('testSubmitBtn');
+    const testimonialsGrid = document.getElementById('testimonialsGrid');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const themeToggle = document.getElementById('themeToggle');
 
-    // Result modal
-    const resultModal = document.getElementById('resultModal');
-    const resultScore = document.getElementById('resultScore');
-    const resultCorrect = document.getElementById('resultCorrect');
-    const resultWrong = document.getElementById('resultWrong');
-    const resultMsg = document.getElementById('resultMsg');
-    const resultCloseBtn = document.getElementById('resultCloseBtn');
+    let visibleCount = 6;
+    let filteredInstitutions = [...institutions];
 
     // =============================================
-    //  HOLAT
+    //  DARK MODE
     // =============================================
-    let currentSubject = null;
-    let currentQuestions = [];
-    let currentIndex = 0;
-    let userAnswers = [];
-    let testTimer = null;
-    let timeSeconds = 600;
-
-    // =============================================
-    //  FUNKSIYALAR
-    // =============================================
-
-    // --- Sahifalarni boshqarish ---
-    function navigateTo(page) {
-        pages.forEach(p => p.classList.remove('active'));
-        document.getElementById(`page-${page}`).classList.add('active');
-        
-        navLinks.forEach(link => {
-            link.classList.toggle('active', link.dataset.page === page);
-        });
-
-        const titles = {
-            home: 'Bosh sahifa',
-            subjects: 'Fanlar',
-            history: 'Natijalar',
-            profile: 'Profil'
-        };
-        pageTitle.textContent = titles[page] || 'Bosh sahifa';
-        
-        if (page === 'home') updateHomeStats();
-        if (page === 'history') renderHistory();
-        if (page === 'profile') updateProfileStats();
-        
-        // Mobil menyuni yopish
-        sidebar.classList.remove('open');
+    function toggleTheme() {
+        const html = document.documentElement;
+        const current = html.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
     }
 
-    // --- Fanlarni ko'rsatish ---
-    function renderSubjects(container, limit = null) {
-        const subjectsToShow = limit ? subjects.slice(0, limit) : subjects;
-        container.innerHTML = subjectsToShow.map(sub => `
-            <div class="subject-card" data-subject="${sub.id}">
-                <div class="subject-icon ${sub.class}">
-                    <i class="fas ${sub.icon}"></i>
+    // Load theme from localStorage
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', toggleTheme);
+
+    // =============================================
+    //  SVG IKONKALAR
+    // =============================================
+    const icons = {
+        school: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+        center: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+        university: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M12 6v4"/><path d="M8 10v6"/><path d="M16 10v6"/></svg>`
+    };
+
+    function getCardClass(type) {
+        const classes = { school: 'school', center: 'center', university: 'university' };
+        return classes[type] || 'school';
+    }
+
+    // =============================================
+    //  RENDER
+    // =============================================
+    function renderStars(rating) {
+        const full = Math.floor(rating);
+        const half = rating % 1 >= 0.5 ? 1 : 0;
+        const empty = 5 - full - half;
+        return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+    }
+
+    function renderInstitutions(items) {
+        if (items.length === 0) {
+            grid.innerHTML = `
+                <div style="grid-column:1/-1;text-align:center;padding:60px 0;color:var(--text-secondary);">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:block;margin:0 auto 16px;">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21L16.65 16.65"/>
+                    </svg>
+                    <h3>Hech narsa topilmadi</h3>
+                    <p>Qidiruv shartlarini o'zgartirib ko'ring</p>
                 </div>
-                <h3>${sub.name}</h3>
-                <p>${sub.questions} savol</p>
-                <div class="subject-questions">
-                    <i class="fas fa-play-circle"></i> Testni boshlash
+            `;
+            return;
+        }
+
+        const visible = items.slice(0, visibleCount);
+        grid.innerHTML = visible.map(item => `
+            <div class="institution-card" data-id="${item.id}">
+                <div class="card-header">
+                    <div class="card-icon ${getCardClass(item.type)}">
+                        ${icons[item.type] || icons.school}
+                    </div>
+                    <div class="card-title">
+                        <h3>${item.name}</h3>
+                        <span class="card-type">${item.typeLabel} • ${item.cityLabel}</span>
+                        <div class="card-rating">
+                            <span class="stars">${renderStars(item.rating)}</span>
+                            <span class="rating-text">${item.rating}</span>
+                            <span style="font-size:13px;color:var(--text-secondary);">(${item.reviews})</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>${item.description}</p>
+                </div>
+                <div class="card-meta">
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        ${item.founded}
+                    </span>
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        ${item.students}+
+                    </span>
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/>
+                        </svg>
+                        ${item.graduates}%
+                    </span>
                 </div>
             </div>
         `).join('');
 
-        container.querySelectorAll('.subject-card').forEach(card => {
+        document.querySelectorAll('.institution-card').forEach(card => {
             card.addEventListener('click', () => {
-                const id = card.dataset.subject;
-                startTest(id);
+                const id = parseInt(card.dataset.id);
+                const item = institutions.find(i => i.id === id);
+                if (item) openModal(item);
             });
         });
-    }
 
-    // --- Testni boshlash ---
-    function startTest(subjectId) {
-        const subject = subjects.find(s => s.id === subjectId);
-        if (!subject) return;
-
-        currentSubject = subject;
-        currentQuestions = questionBank[subjectId] || [];
-        if (currentQuestions.length === 0) {
-            alert('Bu fan uchun savollar mavjud emas!');
-            return;
+        if (visibleCount >= items.length) {
+            loadMoreBtn.style.display = 'none';
+        } else {
+            loadMoreBtn.style.display = 'inline-flex';
         }
-
-        // Savollarni aralashtirish
-        currentQuestions = shuffleArray([...currentQuestions]);
-        userAnswers = new Array(currentQuestions.length).fill(null);
-        currentIndex = 0;
-        timeSeconds = Math.min(currentQuestions.length * 60, 600);
-
-        modalTitle.textContent = `${subject.name} - Test`;
-        testTotal.textContent = currentQuestions.length;
-        testTime.textContent = formatTime(timeSeconds);
-        
-        testModal.classList.add('active');
-        renderTestQuestion();
-        startTestTimer();
     }
 
-    // --- Test savolini ko'rsatish ---
-    function renderTestQuestion() {
-        const q = currentQuestions[currentIndex];
-        if (!q) return;
+    function renderTestimonials() {
+        testimonialsGrid.innerHTML = testimonials.map(t => `
+            <div class="testimonial-card">
+                <div class="quote">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A29BFE" stroke-width="2">
+                        <path d="M10 11h-4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1z"/>
+                        <path d="M18 11h-4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1z"/>
+                        <path d="M10 15a4 4 0 0 0-4 4v3h4"/>
+                        <path d="M18 15a4 4 0 0 0-4 4v3h4"/>
+                    </svg>
+                </div>
+                <p>"${t.text}"</p>
+                <div class="author">
+                    <div class="author-avatar">${t.name[0]}</div>
+                    <div class="author-info">
+                        <h4>${t.name}</h4>
+                        <p>${t.role}</p>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
 
-        testQNum.textContent = `Savol ${currentIndex + 1}/${currentQuestions.length}`;
-        testQText.textContent = q.text;
+    // =============================================
+    //  MODAL
+    // =============================================
+    function openModal(item) {
+        modalTitle.textContent = item.name;
+        modalBody.innerHTML = `
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
+                <span style="background:var(--primary-bg);color:var(--primary);padding:4px 16px;border-radius:60px;font-size:13px;font-weight:600;">${item.typeLabel}</span>
+                <span style="background:var(--bg-input);color:var(--text-secondary);padding:4px 16px;border-radius:60px;font-size:13px;">${item.cityLabel}</span>
+                <span style="background:#FDCB6E20;color:#FDCB6E;padding:4px 16px;border-radius:60px;font-size:13px;font-weight:600;">
+                    ★ ${item.rating} (${item.reviews} sharh)
+                </span>
+            </div>
+            <p style="font-size:16px;line-height:1.8;margin-bottom:20px;color:var(--text-secondary);">${item.description}</p>
+            <div style="background:var(--bg-input);border-radius:var(--radius);padding:16px 20px;">
+                <div class="detail-row"><span class="label">📍 Manzil</span><span class="value">${item.address}</span></div>
+                <div class="detail-row"><span class="label">📞 Telefon</span><span class="value">${item.phone}</span></div>
+                <div class="detail-row"><span class="label">🌐 Veb-sayt</span><span class="value"><a href="#" style="color:var(--primary);text-decoration:none;">${item.website}</a></span></div>
+                <div class="detail-row"><span class="label">📅 Tashkil etilgan</span><span class="value">${item.founded}</span></div>
+                <div class="detail-row"><span class="label">👨‍🎓 O'quvchilar</span><span class="value">${item.students}+</span></div>
+                <div class="detail-row"><span class="label">🎓 Bitiruv statistikasi</span><span class="value">${item.graduates}%</span></div>
+            </div>
+        `;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-        testOptions.innerHTML = '';
-        q.options.forEach((optText, idx) => {
-            const label = document.createElement('label');
-            label.className = 'option-item';
-            if (userAnswers[currentIndex] === idx) {
-                label.classList.add('selected');
-            }
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 
-            const radio = document.createElement('input');
-            radio.type = 'radio';
-            radio.name = 'testOption';
-            radio.value = idx;
-            if (userAnswers[currentIndex] === idx) {
-                radio.checked = true;
-            }
+    // =============================================
+    //  FILTER
+    // =============================================
+    function filterInstitutions(e) {
+        if (e) e.preventDefault();
+        
+        const search = searchInput.value.toLowerCase().trim();
+        const type = typeFilter.value;
+        const city = cityFilter.value;
 
-            radio.addEventListener('change', function() {
-                const val = parseInt(this.value, 10);
-                userAnswers[currentIndex] = val;
-                const allOpts = testOptions.querySelectorAll('.option-item');
-                allOpts.forEach((item, i) => {
-                    item.classList.toggle('selected', i === val);
-                });
-                updateTestProgress();
-            });
-
-            const span = document.createElement('span');
-            span.className = 'option-label';
-            span.textContent = optText;
-
-            label.appendChild(radio);
-            label.appendChild(span);
-            testOptions.appendChild(label);
+        filteredInstitutions = institutions.filter(item => {
+            const matchSearch = item.name.toLowerCase().includes(search) || 
+                               item.description.toLowerCase().includes(search);
+            const matchType = type === 'all' || item.type === type;
+            const matchCity = city === 'all' || item.city === city;
+            return matchSearch && matchType && matchCity;
         });
 
-        // Tugmalar holati
-        testPrevBtn.disabled = currentIndex === 0;
-        testNextBtn.disabled = currentIndex === currentQuestions.length - 1;
-        updateTestProgress();
+        visibleCount = 6;
+        renderInstitutions(filteredInstitutions);
     }
 
-    // --- Test progressi ---
-    function updateTestProgress() {
-        const answered = userAnswers.filter(a => a !== null).length;
-        const total = currentQuestions.length;
-        const pct = total > 0 ? (answered / total) * 100 : 0;
-        testProgressBar.style.width = pct + '%';
-    }
-
-    // --- Test taymeri ---
-    function startTestTimer() {
-        if (testTimer) clearInterval(testTimer);
-        testTimer = setInterval(() => {
-            timeSeconds--;
-            testTime.textContent = formatTime(timeSeconds);
+    // =============================================
+    //  ANIMATSION NUMBERS
+    // =============================================
+    function animateNumbers() {
+        document.querySelectorAll('.stat-number').forEach(el => {
+            const target = parseInt(el.dataset.count);
+            const duration = 2000;
+            const steps = 60;
+            const stepValue = target / steps;
+            let current = 0;
+            let count = 0;
             
-            if (timeSeconds <= 0) {
-                clearInterval(testTimer);
-                submitTest();
-            }
-        }, 1000);
-    }
-
-    // --- Testni topshirish ---
-    function submitTest() {
-        if (testTimer) clearInterval(testTimer);
-        
-        let correct = 0;
-        let wrong = 0;
-        
-        currentQuestions.forEach((q, idx) => {
-            const ans = userAnswers[idx];
-            if (ans === null) {
-                wrong++;
-            } else if (ans === q.correct) {
-                correct++;
-            } else {
-                wrong++;
-            }
+            const interval = setInterval(() => {
+                count++;
+                current += stepValue;
+                if (count >= steps) {
+                    current = target;
+                    clearInterval(interval);
+                }
+                el.textContent = Math.round(current).toLocaleString();
+            }, duration / steps);
         });
-
-        const total = currentQuestions.length;
-        const score = Math.round((correct / total) * 100);
-        
-        // Natijalarni saqlash
-        const result = {
-            subject: currentSubject.name,
-            subjectId: currentSubject.id,
-            date: new Date().toLocaleDateString('uz-UZ'),
-            score: score,
-            correct: correct,
-            wrong: wrong,
-            total: total
-        };
-        
-        history.push(result);
-        localStorage.setItem('testHistory', JSON.stringify(history));
-        totalTests = history.length;
-
-        // Natijani ko'rsatish
-        testModal.classList.remove('active');
-        showResult(result);
     }
 
-    // --- Natijalarni ko'rsatish ---
-    function showResult(result) {
-        resultScore.textContent = result.score + '%';
-        resultCorrect.textContent = result.correct;
-        resultWrong.textContent = result.wrong;
-        
-        let msg = '';
-        if (result.score === 100) msg = '🌟 Ajoyib! Mukammal natija!';
-        else if (result.score >= 80) msg = '🎉 Aʼlo daraja! Bilimingiz zoʻr!';
-        else if (result.score >= 60) msg = '👍 Yaxshi! Oʻrganishni davom eting!';
-        else if (result.score >= 40) msg = '📚 Yomon emas, biroz koʻproq takrorlang.';
-        else msg = '💪 Mashq qilishni davom eting, albatta yaxshilanadi!';
-        resultMsg.textContent = msg;
-        
-        resultModal.classList.add('active');
-        updateHomeStats();
-        renderHistory();
-        updateProfileStats();
-    }
-
-    // --- Tarixni ko'rsatish ---
-    function renderHistory() {
-        if (history.length === 0) {
-            historyList.innerHTML = `
-                <div style="text-align: center; padding: 40px 0; color: var(--gray-500);">
-                    <i class="fas fa-inbox" style="font-size: 48px; display: block; margin-bottom: 12px;"></i>
-                    <p>Hali hech qanday test topshirilmagan</p>
-                </div>
-            `;
-            return;
-        }
-
-        historyList.innerHTML = history.slice().reverse().map(item => {
-            const passed = item.score >= 60;
-            return `
-                <div class="history-item">
-                    <div class="h-left">
-                        <div class="h-icon ${item.subjectId}">
-                            <i class="fas ${subjects.find(s => s.id === item.subjectId)?.icon || 'fa-book'}"></i>
-                        </div>
-                        <div class="h-info">
-                            <h4>${item.subject}</h4>
-                            <p>${item.date} • ${item.total} savol</p>
-                        </div>
-                    </div>
-                    <div class="h-score ${passed ? 'pass' : 'fail'}">
-                        ${item.score}%
-                    </div>
-                </div>
-            `;
-        }).join('');
-    }
-
-    // --- Statistika ---
-    function updateHomeStats() {
-        totalTestsEl.textContent = history.length;
-        if (history.length === 0) {
-            avgScoreEl.textContent = '0%';
-            return;
-        }
-        const avg = Math.round(history.reduce((sum, h) => sum + h.score, 0) / history.length);
-        avgScoreEl.textContent = avg + '%';
-    }
-
-    function updateProfileStats() {
-        profileTests.textContent = history.length;
-        if (history.length === 0) {
-            profileAvg.textContent = '0%';
-            profileBest.textContent = '0%';
-            return;
-        }
-        const avg = Math.round(history.reduce((sum, h) => sum + h.score, 0) / history.length);
-        const best = Math.max(...history.map(h => h.score));
-        profileAvg.textContent = avg + '%';
-        profileBest.textContent = best + '%';
-    }
-
-    // --- Yordamchi funksiyalar ---
-    function shuffleArray(arr) {
-        for (let i = arr.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [arr[i], arr[j]] = [arr[j], arr[i]];
-        }
-        return arr;
-    }
-
-    function formatTime(seconds) {
-        const m = Math.floor(seconds / 60);
-        const s = seconds % 60;
-        return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-    }
+    // =============================================
+    //  NAVIGATION
+    // =============================================
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            
+            const target = this.getAttribute('href');
+            if (target && target.startsWith('#') && target !== '#home') {
+                const el = document.querySelector(target);
+                if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            
+            navLinks.classList.remove('open');
+        });
+    });
 
     // =============================================
     //  EVENT LISTENERLAR
     // =============================================
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
 
-    // Navigatsiya
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            navigateTo(link.dataset.page);
+    searchForm.addEventListener('submit', filterInstitutions);
+    searchInput.addEventListener('input', filterInstitutions);
+    typeFilter.addEventListener('change', filterInstitutions);
+    cityFilter.addEventListener('change', filterInstitutions);
+
+    loadMoreBtn.addEventListener('click', () => {
+        visibleCount += 6;
+        renderInstitutions(filteredInstitutions);
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
         });
     });
 
-    // Mobil menyu
-    menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-    });
-
-    // Modal yopish
-    modalClose.addEventListener('click', () => {
-        if (testTimer) clearInterval(testTimer);
-        testModal.classList.remove('active');
-    });
-
-    resultCloseBtn.addEventListener('click', () => {
-        resultModal.classList.remove('active');
-    });
-
-    // Test navigatsiya
-    testPrevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            renderTestQuestion();
-        }
-    });
-
-    testNextBtn.addEventListener('click', () => {
-        if (currentIndex < currentQuestions.length - 1) {
-            currentIndex++;
-            renderTestQuestion();
-        }
-    });
-
-    testSubmitBtn.addEventListener('click', () => {
-        const answered = userAnswers.filter(a => a !== null).length;
-        if (answered < currentQuestions.length) {
-            if (!confirm(`Hali ${currentQuestions.length - answered} ta savolga javob bermadingiz. Topshirmoqchimisiz?`)) {
-                return;
+    // =============================================
+    //  SMOOTH SCROLL
+    // =============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
             }
-        } else {
-            if (!confirm('Testni topshirishga ishonchingiz komilmi?')) {
-                return;
-            }
-        }
-        submitTest();
-    });
-
-    // Modalni tashqaridan bosish bilan yopish
-    testModal.addEventListener('click', (e) => {
-        if (e.target === testModal) {
-            if (testTimer) clearInterval(testTimer);
-            testModal.classList.remove('active');
-        }
-    });
-
-    resultModal.addEventListener('click', (e) => {
-        if (e.target === resultModal) {
-            resultModal.classList.remove('active');
-        }
-    });
-
-    // Klaviatura yordami
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            testModal.classList.remove('active');
-            resultModal.classList.remove('active');
-        }
+        });
     });
 
     // =============================================
-    //  INIT - ISHGA TUSHIRISH
+    //  INIT
     // =============================================
     function init() {
-        renderSubjects(subjectsGrid, 4);
-        renderSubjects(allSubjectsGrid);
-        renderHistory();
-        updateHomeStats();
-        updateProfileStats();
+        renderInstitutions(institutions);
+        renderTestimonials();
+        animateNumbers();
     }
 
     init();

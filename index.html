@@ -1,300 +1,423 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="uz" data-theme="light">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EduExam Pro - Online Examination System</title>
+    <title>Ta'lim Maskani - Eng yaxshi ta'lim muassasalari</title>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <!-- Font Awesome 6 (Free) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
-    <div class="app">
-        <!-- ===== SIDEBAR ===== -->
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-brand">
-                <div class="brand-logo">
-                    <svg viewBox="0 0 24 24" width="36" height="36">
-                        <path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="brand">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect x="2" y="2" width="36" height="36" rx="12" fill="#6C5CE7"/>
+                    <path d="M12 14L20 10L28 14L20 18L12 14Z" fill="white" opacity="0.9"/>
+                    <path d="M12 20L20 16L28 20L20 24L12 20Z" fill="white" opacity="0.7"/>
+                    <path d="M12 26L20 22L28 26L20 30L12 26Z" fill="white" opacity="0.5"/>
+                    <circle cx="20" cy="14" r="3" fill="white"/>
+                </svg>
+                <span>Ta'lim <span class="highlight">Maskani</span></span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Bosh sahifa</a></li>
+                <li><a href="#institutions">Muassasalar</a></li>
+                <li><a href="#about">Biz haqimizda</a></li>
+                <li><a href="#contact" class="btn-nav">Bog'lanish</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
                     </svg>
-                    <span>EduExam</span>
-                </div>
-            </div>
-            
-            <nav class="sidebar-nav">
-                <a href="#" class="nav-link active" data-page="dashboard">
-                    <i class="fas fa-th-large"></i>
-                    <span>Asosiy</span>
-                </a>
-                <a href="#" class="nav-link" data-page="exams">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Imtihonlar</span>
-                </a>
-                <a href="#" class="nav-link" data-page="subjects">
-                    <i class="fas fa-book-open"></i>
-                    <span>Fanlar</span>
-                </a>
-                <a href="#" class="nav-link" data-page="results">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>Natijalar</span>
-                </a>
-                <a href="#" class="nav-link" data-page="analytics">
-                    <i class="fas fa-analytics"></i>
-                    <span>Tahlil</span>
-                </a>
-            </nav>
-            
-            <div class="sidebar-footer">
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2364748b' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E" alt="User" />
-                    </div>
-                    <div class="user-info">
-                        <div class="user-name">Azizbek Karimov</div>
-                        <div class="user-role">Talaba · 3-kurs</div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-
-        <!-- ===== MAIN CONTENT ===== -->
-        <main class="main-content">
-            <!-- Header -->
-            <header class="top-header">
+                    <svg class="moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
                 <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="header-search">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Imtihon, fan yoki savol izlash..." />
-                </div>
-                <div class="header-actions">
-                    <button class="icon-btn" title="Bildirishnomalar">
-                        <i class="fas fa-bell"></i>
-                        <span class="badge">5</span>
-                    </button>
-                    <button class="icon-btn" title="Sozlamalar">
-                        <i class="fas fa-cog"></i>
-                    </button>
-                </div>
-            </header>
-
-            <!-- Pages -->
-            <div class="pages">
-                <!-- DASHBOARD -->
-                <div class="page active" id="page-dashboard">
-                    <!-- Welcome -->
-                    <div class="welcome-section">
-                        <div>
-                            <h1>Xush kelibsiz, Azizbek! 👋</h1>
-                            <p>Bugungi imtihonlar va natijalaringizni ko'ring</p>
-                        </div>
-                        <button class="btn btn-primary" id="quickStartBtn">
-                            <i class="fas fa-play"></i> Tez test
-                        </button>
-                    </div>
-
-                    <!-- Stats -->
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-icon blue">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <div class="stat-info">
-                                <span class="stat-value" id="totalExams">0</span>
-                                <span class="stat-label">Jami imtihonlar</span>
-                            </div>
-                            <div class="stat-change positive">
-                                <i class="fas fa-arrow-up"></i> 12%
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon green">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="stat-info">
-                                <span class="stat-value" id="avgScore">0%</span>
-                                <span class="stat-label">O'rtacha ball</span>
-                            </div>
-                            <div class="stat-change positive">
-                                <i class="fas fa-arrow-up"></i> 8%
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon purple">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <div class="stat-info">
-                                <span class="stat-value" id="bestScore">0%</span>
-                                <span class="stat-label">Eng yaxshi natija</span>
-                            </div>
-                            <div class="stat-change positive">
-                                <i class="fas fa-arrow-up"></i> 5%
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon orange">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="stat-info">
-                                <span class="stat-value" id="totalTime">0h</span>
-                                <span class="stat-label">Umumiy vaqt</span>
-                            </div>
-                            <div class="stat-change neutral">
-                                <i class="fas fa-minus"></i> 0%
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Recent Exams -->
-                    <div class="section-header">
-                        <h2><i class="fas fa-clock"></i> So'nggi imtihonlar</h2>
-                        <a href="#" class="view-all" data-page="exams">Barchasini ko'rish →</a>
-                    </div>
-                    <div class="recent-exams" id="recentExams">
-                        <!-- Rendered by JS -->
-                    </div>
-                </div>
-
-                <!-- EXAMS -->
-                <div class="page" id="page-exams">
-                    <div class="page-header">
-                        <h2><i class="fas fa-file-alt"></i> Barcha imtihonlar</h2>
-                        <p>Mavjud imtihonlarni ko'ring va ishlashni boshlang</p>
-                    </div>
-                    <div class="exams-grid" id="examsGrid">
-                        <!-- Rendered by JS -->
-                    </div>
-                </div>
-
-                <!-- SUBJECTS -->
-                <div class="page" id="page-subjects">
-                    <div class="page-header">
-                        <h2><i class="fas fa-book-open"></i> Fanlar</h2>
-                        <p>Fanlar bo'yicha imtihonlar</p>
-                    </div>
-                    <div class="subjects-grid" id="subjectsGrid">
-                        <!-- Rendered by JS -->
-                    </div>
-                </div>
-
-                <!-- RESULTS -->
-                <div class="page" id="page-results">
-                    <div class="page-header">
-                        <h2><i class="fas fa-chart-bar"></i> Mening natijalarim</h2>
-                        <p>Barcha imtihon natijalaringiz</p>
-                    </div>
-                    <div class="results-list" id="resultsList">
-                        <!-- Rendered by JS -->
-                    </div>
-                </div>
-
-                <!-- ANALYTICS -->
-                <div class="page" id="page-analytics">
-                    <div class="page-header">
-                        <h2><i class="fas fa-analytics"></i> Tahlil</h2>
-                        <p>Imtihon statistikangiz</p>
-                    </div>
-                    <div class="analytics-grid">
-                        <div class="analytics-card">
-                            <h3>Fanlar bo'yicha natijalar</h3>
-                            <div class="chart-container" id="subjectChart">
-                                <!-- Chart rendered by JS -->
-                            </div>
-                        </div>
-                        <div class="analytics-card">
-                            <h3>Umumiy statistika</h3>
-                            <div class="stats-details" id="statsDetails">
-                                <!-- Rendered by JS -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <!-- ===== EXAM MODAL ===== -->
-    <div class="modal" id="examModal">
-        <div class="modal-content modal-lg">
-            <div class="modal-header">
-                <div>
-                    <h2 id="examModalTitle">Imtihon</h2>
-                    <p id="examModalSub">Fan: Matematika</p>
-                </div>
-                <button class="modal-close" id="examModalClose">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="exam-meta">
-                    <div class="exam-meta-item">
-                        <i class="fas fa-list"></i>
-                        <span><span id="examTotalQ">0</span> savol</span>
-                    </div>
-                    <div class="exam-meta-item">
-                        <i class="fas fa-clock"></i>
-                        <span id="examTimer">10:00</span>
-                    </div>
-                    <div class="exam-meta-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span id="examAnswered">0</span> javob berildi
-                    </div>
-                </div>
-                <div class="exam-progress">
-                    <div class="exam-progress-bar" id="examProgressBar" style="width: 0%"></div>
-                </div>
-                <div class="exam-question" id="examQuestion">
-                    <div class="question-number" id="examQNum">Savol 1</div>
-                    <div class="question-text" id="examQText">Savol yuklanmoqda...</div>
-                    <div class="exam-options" id="examOptions"></div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="btn-group">
-                    <button class="btn btn-outline" id="examPrevBtn">
-                        <i class="fas fa-chevron-left"></i> Oldingi
-                    </button>
-                    <button class="btn btn-outline" id="examNextBtn">
-                        Keyingi <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                <button class="btn btn-success" id="examSubmitBtn">
-                    <i class="fas fa-check-circle"></i> Topshirish
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18M3 6h18M3 18h18"/>
+                    </svg>
                 </button>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- ===== RESULT MODAL ===== -->
-    <div class="modal" id="resultModal">
-        <div class="modal-content result-modal">
-            <div class="result-icon" id="resultIcon">
-                <i class="fas fa-trophy"></i>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                        O'zbekistonning eng yaxshi ta'lim platformasi
+                    </div>
+                    
+                    <h1>Kelajagingizni <span class="gradient-text">bugundan boshlang</span></h1>
+                    <p>Maktab, o'quv markaz va universitetlar haqida barcha ma'lumotlar bir joyda. Reytinglar, sharhlar va tavsiyalar asosida tanlang.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#search-section" class="btn btn-primary btn-hero">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21L16.65 16.65"/>
+                            </svg>
+                            Muassasa qidirish
+                        </a>
+                        <a href="#about" class="btn btn-outline">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 8v8M8 12h8"/>
+                            </svg>
+                            Ko'proq bilish
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-block">
+                            <span class="stat-number" data-count="500">0</span>
+                            <span class="stat-label">Ta'lim muassasalari</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-block">
+                            <span class="stat-number" data-count="15000">0</span>
+                            <span class="stat-label">O'quvchilar</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-block">
+                            <span class="stat-number" data-count="98">0</span>
+                            <span class="stat-label">% Muvaffaqiyat</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-illustration">
+                        <svg width="100%" height="100%" viewBox="0 0 500 500" fill="none">
+                            <rect x="10" y="10" width="480" height="480" rx="50" fill="var(--hero-bg)"/>
+                            <circle cx="250" cy="250" r="180" fill="#6C5CE7" opacity="0.04"/>
+                            <circle cx="250" cy="250" r="130" fill="#6C5CE7" opacity="0.03"/>
+                            <circle cx="250" cy="250" r="80" fill="#6C5CE7" opacity="0.02"/>
+                            <path d="M250 100L150 150L250 200L350 150L250 100Z" fill="#6C5CE7" opacity="0.15"/>
+                            <path d="M250 100L150 150L250 200L350 150L250 100Z" stroke="#6C5CE7" stroke-width="3"/>
+                            <path d="M250 200V240" stroke="#6C5CE7" stroke-width="3"/>
+                            <rect x="230" y="240" width="40" height="8" rx="2" fill="#6C5CE7" opacity="0.3"/>
+                            <rect x="170" y="220" width="20" height="40" rx="2" fill="#A29BFE" opacity="0.3"/>
+                            <rect x="195" y="210" width="20" height="50" rx="2" fill="#A29BFE" opacity="0.25"/>
+                            <rect x="220" y="215" width="20" height="45" rx="2" fill="#A29BFE" opacity="0.35"/>
+                            <circle cx="180" cy="300" r="12" fill="#6C5CE7" opacity="0.12"/>
+                            <circle cx="180" cy="330" r="16" fill="#6C5CE7" opacity="0.08"/>
+                            <circle cx="320" cy="300" r="12" fill="#6C5CE7" opacity="0.12"/>
+                            <circle cx="320" cy="330" r="16" fill="#6C5CE7" opacity="0.08"/>
+                            <circle cx="130" cy="170" r="6" fill="#FDCB6E" opacity="0.5"/>
+                            <circle cx="370" cy="170" r="6" fill="#FDCB6E" opacity="0.5"/>
+                            <circle cx="130" cy="350" r="6" fill="#FDCB6E" opacity="0.3"/>
+                            <circle cx="370" cy="350" r="6" fill="#FDCB6E" opacity="0.3"/>
+                            <text x="250" y="405" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#6C5CE7">Ta'lim</text>
+                            <text x="250" y="435" text-anchor="middle" font-family="Inter" font-size="18" font-weight="500" fill="#A29BFE">Maskani</text>
+                        </svg>
+                    </div>
+                </div>
             </div>
-            <h2 id="resultTitle">Imtihon yakunlandi!</h2>
-            <div class="result-score" id="resultScore">0%</div>
-            <div class="result-details">
-                <div class="result-detail">
-                    <span class="detail-label">To'g'ri</span>
-                    <span class="detail-value correct" id="resultCorrect">0</span>
+        </div>
+    </section>
+
+    <!-- ===== SEARCH SECTION (ALOHIDA) ===== -->
+    <section class="search-section" id="search-section">
+        <div class="container">
+            <div class="search-header">
+                <h2><span class="gradient-text">Muassasa qidirish</span></h2>
+                <p>Maktab, o'quv markaz va universitetlarni qidiring</p>
+            </div>
+            <div class="search-card">
+                <form class="search-form" id="searchForm">
+                    <div class="search-input">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21L16.65 16.65"/>
+                        </svg>
+                        <input type="text" placeholder="Muassasa nomi yoki yo'nalish..." id="searchInput" />
+                    </div>
+                    
+                    <div class="filter-group">
+                        <div class="filter-select">
+                            <select id="typeFilter">
+                                <option value="all">Barcha turlar</option>
+                                <option value="school">Maktab</option>
+                                <option value="center">O'quv markaz</option>
+                                <option value="university">Universitet</option>
+                            </select>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 8L1 3H11L6 8Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="filter-select">
+                            <select id="cityFilter">
+                                <option value="all">Barcha shaharlar</option>
+                                <option value="tashkent">Toshkent</option>
+                                <option value="samarqand">Samarqand</option>
+                                <option value="buxoro">Buxoro</option>
+                                <option value="andijon">Andijon</option>
+                                <option value="namangan">Namangan</option>
+                                <option value="qarshi">Qarshi</option>
+                            </select>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 8L1 3H11L6 8Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-search">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21L16.65 16.65"/>
+                        </svg>
+                        Qidirish
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INSTITUTIONS ===== -->
+    <section class="institutions" id="institutions">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <span class="section-tag">TA'LIM MUASSASALARI</span>
+                    <h2>Eng yaxshi <span class="gradient-text">maktab, markaz va universitetlar</span></h2>
+                    <p>Reyting, sharhlar va tavsiyalar asosida tanlang</p>
                 </div>
-                <div class="result-detail">
-                    <span class="detail-label">Noto'g'ri</span>
-                    <span class="detail-value wrong" id="resultWrong">0</span>
-                </div>
-                <div class="result-detail">
-                    <span class="detail-label">Umumiy</span>
-                    <span class="detail-value" id="resultTotal">0</span>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" data-view="grid" aria-label="Grid view">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </button>
+                    <button class="toggle-btn" data-view="list" aria-label="List view">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="4" rx="1"/>
+                            <rect x="3" y="10" width="18" height="4" rx="1"/>
+                            <rect x="3" y="16" width="18" height="4" rx="1"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <p class="result-message" id="resultMsg">Ajoyib natija!</p>
-            <button class="btn btn-primary" id="resultCloseBtn">
-                <i class="fas fa-check"></i> Yopish
-            </button>
+            <div class="institutions-grid" id="institutionsGrid"></div>
+            <div class="load-more">
+                <button class="btn btn-outline" id="loadMoreBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                    Ko'proq ko'rish
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features" id="about">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">AFZALLIKLAR</span>
+                <h2>Nima uchun <span class="gradient-text">bizni tanlash kerak?</span></h2>
+                <p>Biz sizga eng yaxshi ta'lim muassasasini topishda yordam beramiz</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3>Reyting tizimi</h3>
+                    <p>Haqiqiy o'quvchilar sharhlari va baholari asosida reyting</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 8v4l2 2"/>
+                        </svg>
+                    </div>
+                    <h3>Shaxsiy tavsiyalar</h3>
+                    <p>Sizning qiziqishlaringizga mos ta'lim muassasalarini taklif qilamiz</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
+                            <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
+                            <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
+                            <path d="M18 12v5"/>
+                        </svg>
+                    </div>
+                    <h3>Statistika</h3>
+                    <p>Bitiruvchilar muvaffaqiyati, ishga joylashish va boshqa ko'rsatkichlar</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3>Bog'lanish</h3>
+                    <p>To'g'ridan-to'g'ri muassasa bilan bog'lanish imkoniyati</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">O'QUVCHILAR FIKRI</span>
+                <h2>Ular <span class="gradient-text">nima deyishadi?</span></h2>
+            </div>
+            <div class="testimonials-grid" id="testimonialsGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>O'z kelajagingizni <span>bugundan boshlang</span></h2>
+                <p>Eng yaxshi ta'lim muassasasini toping va muvaffaqiyatli kelajak sari birinchi qadamni qo'ying</p>
+                <div class="cta-buttons">
+                    <a href="#search-section" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21L16.65 16.65"/>
+                        </svg>
+                        Izlashni boshlash
+                    </a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        Maslahat olish
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="brand-logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                            <rect x="2" y="2" width="36" height="36" rx="12" fill="#6C5CE7"/>
+                            <path d="M12 14L20 10L28 14L20 18L12 14Z" fill="white" opacity="0.9"/>
+                            <path d="M12 20L20 16L28 20L20 24L12 20Z" fill="white" opacity="0.7"/>
+                            <path d="M12 26L20 22L28 26L20 30L12 26Z" fill="white" opacity="0.5"/>
+                            <circle cx="20" cy="14" r="3" fill="white"/>
+                        </svg>
+                        <span>Ta'lim Maskani</span>
+                    </a>
+                    <p>O'zbekistonning eng yaxshi ta'lim muassasalarini topish uchun ishonchli platforma.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Telegram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                                <circle cx="12" cy="12" r="5"/>
+                                <circle cx="17" cy="7" r="1" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Muassasalar</h4>
+                    <ul>
+                        <li><a href="#">Maktablar</a></li>
+                        <li><a href="#">O'quv markazlar</a></li>
+                        <li><a href="#">Universitetlar</a></li>
+                        <li><a href="#">Kollejlar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Yordam</h4>
+                    <ul>
+                        <li><a href="#">Tez-tez so'raladigan savollar</a></li>
+                        <li><a href="#">Qanday ishlaydi?</a></li>
+                        <li><a href="#">Qo'llab-quvvatlash</a></li>
+                        <li><a href="#">Biz bilan bog'lanish</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Bog'lanish</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            +998 99 123 45 67
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            info@talimmaskani.uz
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Toshkent, O'zbekiston
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ta'lim Maskani. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL ===== -->
+    <div class="modal" id="institutionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Muassasa nomi</h2>
+                <button class="modal-close" id="modalClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
 
