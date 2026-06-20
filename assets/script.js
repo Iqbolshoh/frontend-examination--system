@@ -266,10 +266,8 @@
         localStorage.setItem('theme', next);
     }
 
-    // Load theme from localStorage
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
-
     themeToggle.addEventListener('click', toggleTheme);
 
     // =============================================

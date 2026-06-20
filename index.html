@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ta'lim Maskani - Eng yaxshi ta'lim muassasalari</title>
+    <title>Ta'lim Maskani - Professional ta'lim platformasi</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/style.css" />
@@ -12,7 +12,7 @@
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="#" class="brand">
+            <a href="#home" class="brand">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <rect x="2" y="2" width="36" height="36" rx="12" fill="#6C5CE7"/>
                     <path d="M12 14L20 10L28 14L20 18L12 14Z" fill="white" opacity="0.9"/>
@@ -49,12 +49,13 @@
         </div>
     </nav>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="home">
+    <!-- ===== SECTION 1: HOME (FULL SCREEN) ===== -->
+    <section class="section fullscreen home-section" id="home">
+        <div class="section-bg"></div>
         <div class="container">
-            <div class="hero-wrapper">
-                <div class="hero-content">
-                    <div class="hero-badge">
+            <div class="home-wrapper">
+                <div class="home-content fade-up">
+                    <div class="home-badge">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
                             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
                         </svg>
@@ -64,7 +65,7 @@
                     <h1>Kelajagingizni <span class="gradient-text">bugundan boshlang</span></h1>
                     <p>Maktab, o'quv markaz va universitetlar haqida barcha ma'lumotlar bir joyda. Reytinglar, sharhlar va tavsiyalar asosida tanlang.</p>
                     
-                    <div class="hero-buttons">
+                    <div class="home-buttons">
                         <a href="#search-section" class="btn btn-primary btn-hero">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="11" cy="11" r="8"/>
@@ -81,7 +82,7 @@
                         </a>
                     </div>
                     
-                    <div class="hero-stats">
+                    <div class="home-stats">
                         <div class="stat-block">
                             <span class="stat-number" data-count="500">0</span>
                             <span class="stat-label">Ta'lim muassasalari</span>
@@ -94,14 +95,14 @@
                         <div class="stat-divider"></div>
                         <div class="stat-block">
                             <span class="stat-number" data-count="98">0</span>
-                            <span class="stat-label">% Muvaffaqiyat</span>
+                            <span class="stat-label">Muvaffaqiyat</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="hero-visual">
-                    <div class="hero-illustration">
-                        <svg width="100%" height="100%" viewBox="0 0 500 500" fill="none">
+                <div class="home-visual fade-up delay-1">
+                    <div class="home-illustration">
+                        <svg viewBox="0 0 500 500" fill="none">
                             <rect x="10" y="10" width="480" height="480" rx="50" fill="var(--hero-bg)"/>
                             <circle cx="250" cy="250" r="180" fill="#6C5CE7" opacity="0.04"/>
                             <circle cx="250" cy="250" r="130" fill="#6C5CE7" opacity="0.03"/>
@@ -119,8 +120,6 @@
                             <circle cx="320" cy="330" r="16" fill="#6C5CE7" opacity="0.08"/>
                             <circle cx="130" cy="170" r="6" fill="#FDCB6E" opacity="0.5"/>
                             <circle cx="370" cy="170" r="6" fill="#FDCB6E" opacity="0.5"/>
-                            <circle cx="130" cy="350" r="6" fill="#FDCB6E" opacity="0.3"/>
-                            <circle cx="370" cy="350" r="6" fill="#FDCB6E" opacity="0.3"/>
                             <text x="250" y="405" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#6C5CE7">Ta'lim</text>
                             <text x="250" y="435" text-anchor="middle" font-family="Inter" font-size="18" font-weight="500" fill="#A29BFE">Maskani</text>
                         </svg>
@@ -128,69 +127,78 @@
                 </div>
             </div>
         </div>
+        <div class="scroll-indicator">
+            <span>Pastga aylantiring</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </div>
     </section>
 
-    <!-- ===== SEARCH SECTION (ALOHIDA) ===== -->
-    <section class="search-section" id="search-section">
+    <!-- ===== SECTION 2: SEARCH (FULL SCREEN) ===== -->
+    <section class="section fullscreen search-section" id="search-section">
         <div class="container">
-            <div class="search-header">
-                <h2><span class="gradient-text">Muassasa qidirish</span></h2>
-                <p>Maktab, o'quv markaz va universitetlarni qidiring</p>
-            </div>
-            <div class="search-card">
-                <form class="search-form" id="searchForm">
-                    <div class="search-input">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"/>
-                            <path d="M21 21L16.65 16.65"/>
-                        </svg>
-                        <input type="text" placeholder="Muassasa nomi yoki yo'nalish..." id="searchInput" />
-                    </div>
-                    
-                    <div class="filter-group">
-                        <div class="filter-select">
-                            <select id="typeFilter">
-                                <option value="all">Barcha turlar</option>
-                                <option value="school">Maktab</option>
-                                <option value="center">O'quv markaz</option>
-                                <option value="university">Universitet</option>
-                            </select>
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M6 8L1 3H11L6 8Z" fill="currentColor"/>
+            <div class="search-wrapper fade-up">
+                <div class="search-header">
+                    <span class="section-tag">QIDIRISH</span>
+                    <h2><span class="gradient-text">Muassasa qidirish</span></h2>
+                    <p>Maktab, o'quv markaz va universitetlarni qidiring</p>
+                </div>
+                <div class="search-card">
+                    <form class="search-form" id="searchForm">
+                        <div class="search-input">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21L16.65 16.65"/>
                             </svg>
+                            <input type="text" placeholder="Muassasa nomi yoki yo'nalish..." id="searchInput" />
                         </div>
-                        <div class="filter-select">
-                            <select id="cityFilter">
-                                <option value="all">Barcha shaharlar</option>
-                                <option value="tashkent">Toshkent</option>
-                                <option value="samarqand">Samarqand</option>
-                                <option value="buxoro">Buxoro</option>
-                                <option value="andijon">Andijon</option>
-                                <option value="namangan">Namangan</option>
-                                <option value="qarshi">Qarshi</option>
-                            </select>
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M6 8L1 3H11L6 8Z" fill="currentColor"/>
+                        
+                        <div class="filter-group">
+                            <div class="filter-select">
+                                <select id="typeFilter">
+                                    <option value="all">Barcha turlar</option>
+                                    <option value="school">Maktab</option>
+                                    <option value="center">O'quv markaz</option>
+                                    <option value="university">Universitet</option>
+                                </select>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 8L1 3H11L6 8Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="filter-select">
+                                <select id="cityFilter">
+                                    <option value="all">Barcha shaharlar</option>
+                                    <option value="tashkent">Toshkent</option>
+                                    <option value="samarqand">Samarqand</option>
+                                    <option value="buxoro">Buxoro</option>
+                                    <option value="andijon">Andijon</option>
+                                    <option value="namangan">Namangan</option>
+                                    <option value="qarshi">Qarshi</option>
+                                </select>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                    <path d="M6 8L1 3H11L6 8Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-search">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21L16.65 16.65"/>
                             </svg>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-search">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"/>
-                            <path d="M21 21L16.65 16.65"/>
-                        </svg>
-                        Qidirish
-                    </button>
-                </form>
+                            Qidirish
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== INSTITUTIONS ===== -->
-    <section class="institutions" id="institutions">
+    <!-- ===== SECTION 3: INSTITUTIONS (FULL SCREEN) ===== -->
+    <section class="section fullscreen institutions-section" id="institutions">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-up">
                 <div>
                     <span class="section-tag">TA'LIM MUASSASALARI</span>
                     <h2>Eng yaxshi <span class="gradient-text">maktab, markaz va universitetlar</span></h2>
@@ -214,7 +222,7 @@
                     </button>
                 </div>
             </div>
-            <div class="institutions-grid" id="institutionsGrid"></div>
+            <div class="institutions-grid fade-up delay-1" id="institutionsGrid"></div>
             <div class="load-more">
                 <button class="btn btn-outline" id="loadMoreBtn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -226,73 +234,76 @@
         </div>
     </section>
 
-    <!-- ===== FEATURES ===== -->
-    <section class="features" id="about">
+    <!-- ===== SECTION 4: ABOUT (FULL SCREEN) ===== -->
+    <section class="section fullscreen about-section" id="about">
         <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">AFZALLIKLAR</span>
-                <h2>Nima uchun <span class="gradient-text">bizni tanlash kerak?</span></h2>
-                <p>Biz sizga eng yaxshi ta'lim muassasasini topishda yordam beramiz</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
-                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                        </svg>
+            <div class="about-wrapper">
+                <div class="about-content fade-up">
+                    <span class="section-tag">BIZ HAQIMIZDA</span>
+                    <h2>Nima uchun <span class="gradient-text">bizni tanlash kerak?</span></h2>
+                    <p>Biz sizga eng yaxshi ta'lim muassasasini topishda yordam beramiz</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <h3>Reyting tizimi</h3>
+                            <p>Haqiqiy o'quvchilar sharhlari va baholari asosida reyting</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 8v4l2 2"/>
+                                </svg>
+                            </div>
+                            <h3>Shaxsiy tavsiyalar</h3>
+                            <p>Sizning qiziqishlaringizga mos ta'lim muassasalarini taklif qilamiz</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
+                                    <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
+                                    <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
+                                    <path d="M18 12v5"/>
+                                </svg>
+                            </div>
+                            <h3>Statistika</h3>
+                            <p>Bitiruvchilar muvaffaqiyati, ishga joylashish va boshqa ko'rsatkichlar</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <h3>Bog'lanish</h3>
+                            <p>To'g'ridan-to'g'ri muassasa bilan bog'lanish imkoniyati</p>
+                        </div>
                     </div>
-                    <h3>Reyting tizimi</h3>
-                    <p>Haqiqiy o'quvchilar sharhlari va baholari asosida reyting</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 8v4l2 2"/>
-                        </svg>
-                    </div>
-                    <h3>Shaxsiy tavsiyalar</h3>
-                    <p>Sizning qiziqishlaringizga mos ta'lim muassasalarini taklif qilamiz</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
-                            <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
-                            <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
-                            <path d="M18 12v5"/>
-                        </svg>
-                    </div>
-                    <h3>Statistika</h3>
-                    <p>Bitiruvchilar muvaffaqiyati, ishga joylashish va boshqa ko'rsatkichlar</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                    </div>
-                    <h3>Bog'lanish</h3>
-                    <p>To'g'ridan-to'g'ri muassasa bilan bog'lanish imkoniyati</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="testimonials">
+    <!-- ===== SECTION 5: TESTIMONIALS (FULL SCREEN) ===== -->
+    <section class="section fullscreen testimonials-section">
         <div class="container">
-            <div class="section-header center">
+            <div class="section-header center fade-up">
                 <span class="section-tag">O'QUVCHILAR FIKRI</span>
                 <h2>Ular <span class="gradient-text">nima deyishadi?</span></h2>
             </div>
-            <div class="testimonials-grid" id="testimonialsGrid"></div>
+            <div class="testimonials-grid fade-up delay-1" id="testimonialsGrid"></div>
         </div>
     </section>
 
-    <!-- ===== CTA ===== -->
-    <section class="cta" id="contact">
+    <!-- ===== SECTION 6: CTA (FULL SCREEN) ===== -->
+    <section class="section fullscreen cta-section" id="contact">
         <div class="container">
-            <div class="cta-content">
+            <div class="cta-content fade-up">
                 <h2>O'z kelajagingizni <span>bugundan boshlang</span></h2>
                 <p>Eng yaxshi ta'lim muassasasini toping va muvaffaqiyatli kelajak sari birinchi qadamni qo'ying</p>
                 <div class="cta-buttons">
